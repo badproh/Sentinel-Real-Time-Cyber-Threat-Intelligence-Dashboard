@@ -1,5 +1,3 @@
-Markdown
-
 # 🛡️ Sentinel: Real-Time Cyber Threat Intelligence Dashboard
 
 **Sentinel** is a lightweight, Python-based Cyber Threat Intelligence (CTI) dashboard designed for Security Operations Centers (SOCs). It integrates real-time threat feeds to automate IP reputation analysis, allowing security analysts to instantly verify suspicious IP addresses and visualize global threat vectors.
