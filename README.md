@@ -1,3 +1,5 @@
+Markdown
+
 # 🛡️ Sentinel: Real-Time Cyber Threat Intelligence Dashboard
 
 **Sentinel** is a lightweight, Python-based Cyber Threat Intelligence (CTI) dashboard designed for Security Operations Centers (SOCs). It integrates real-time threat feeds to automate IP reputation analysis, allowing security analysts to instantly verify suspicious IP addresses and visualize global threat vectors.
@@ -8,46 +10,46 @@
 * **Real-Time IP Reputation:** Fetches live "Abuse Confidence Scores" from the AbuseIPDB API.
 * **Risk Scoring:** Automatically categorizes IPs as **Safe**, **Suspicious**, or **High Risk**.
 * **ISP & Geo-Location:** Displays Internet Service Provider (ISP) data, usage type (Data Center/Residential), and Country.
-* **3D Global Threat Map:** Visualizes simulated threat beacons on a 3D interactive globe.
-* **Analyst Mode:** Includes a "Demo Mode" for offline presentation and testing.
-
-## 🛠️ Tech Stack
-* **Language:** Python 3.10+
-* **Framework:** Streamlit (for UI/Dashboard)
-* **API:** AbuseIPDB (Threat Intelligence Feed)
-* **Visualization:** PyDeck (3D Geospatial Mapping)
-* **Network:** Requests library
+* **3D Global Threat Map:** Visualizes simulated threat beacons on a 3D interactive globe using PyDeck.
+* **Analyst Mode:** Includes a "Demo Mode" fallback for offline presentation and testing.
 
 ---
 
-## ⚙️ Installation
+## 🛠️ Tech Stack
+* **Language:** Python 3.10+
+* **Framework:** [Streamlit](https://streamlit.io/) (UI/Dashboard)
+* **API:** [AbuseIPDB](https://www.abuseipdb.com/) (Threat Intelligence Feed)
+* **Visualization:** PyDeck (3D Geospatial Mapping)
+* **Networking:** Requests library
+
+---
+
+## ⚙️ Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/sentinel-dashboard.git](https://github.com/your-username/sentinel-dashboard.git)
+git clone [https://github.com/YOUR-USERNAME/sentinel-dashboard.git](https://github.com/YOUR-USERNAME/sentinel-dashboard.git)
 cd sentinel-dashboard
 2. Install Dependencies
-You can install the required libraries using pip:
-
 Bash
 
-pip install streamlit requests pydeck
-🔑 Configuration (API Key)
+pip install -r requirements.txt
+3. API Configuration
 To use the Real-Time Analysis feature, you need a free API Key from AbuseIPDB.
-
-Sign up and generate an API Key.
 
 Open dashboard.py.
 
-Paste your key into the MY_SECRET_KEY variable:
+Find the variable MY_SECRET_KEY (around line 14).
+
+Paste your API key inside the quotes:
 
 Python
 
-MY_SECRET_KEY = "YOUR_API_KEY_HERE"
-Alternatively, you can enter the key manually in the dashboard sidebar at runtime.
+MY_SECRET_KEY = "YOUR_ACTUAL_API_KEY_HERE"
+(Note: The code is pre-configured to handle API errors gracefully).
 
 ▶️ Usage
-Run the dashboard using Streamlit:
+Run the dashboard locally using Streamlit:
 
 Bash
 
@@ -56,19 +58,24 @@ The application will automatically open in your default web browser at http://lo
 
 How to Use:
 
-Enter IP: Type a suspicious IP address (e.g., 118.25.6.39) in the "Threat Lookup" box.
+Enter IP: Type a suspicious IP address (e.g., 118.25.6.39 or 8.8.8.8) in the "Threat Lookup" box.
 
 Analyze: Click the Analyze IP Threat button.
 
 View Results: Check the Risk Score, ISP details, and visual indicators.
 
+Visualize: Observe the "Global Threat Map" on the right panel for simulated C2 beacon activity.
+
 📂 Project Structure
+Plaintext
+
 📁 sentinel-dashboard/
 ├── dashboard.py       # Main application source code
+├── requirements.txt   # Python dependencies
 ├── README.md          # Project documentation
-└── requirements.txt   # List of dependencies
+└── .gitignore         # Files to ignore (e.g., local configs)
 ⚠️ Disclaimer
-This tool is intended for educational and defensive purposes only. It is designed to help security analysts identify threats. The "Global Threat Map" visualizes simulated data for demonstration purposes.
+This tool is intended for educational and defensive purposes only. It is designed to help security analysts identify threats. The "Global Threat Map" visualizes simulated data for demonstration purposes to represent CTI capabilities.
 
 👤 Author
 Hirday Shevkani
